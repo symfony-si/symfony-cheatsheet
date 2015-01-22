@@ -7,6 +7,7 @@ Useful practical commands, code and things you will frequently need for working 
 * [Console](#console)
   * [General](#general)
   * [Cache](#cache)
+  * [Bundle](#bundle)
   * [Routing](#routing)
   * [Doctrine](#doctrine)
 
@@ -27,6 +28,11 @@ Useful practical commands, code and things you will frequently need for working 
 
 `$ php app/console cache:clear [--no-warmup] [--no-optional-warmers]` Clear the cached information  
 `$ php app/console cache:warmup  [--no-optional-warmers]` Warms up an empty cache  
+
+### Bundle
+
+`$ php app/console assets:install <target_dir> [--symlink] [--relative]` Installs bundles web assets under a public web directory  
+`$ php app/console generate:bundle [--namespace=...] [--dir=...] [--bundle-name=...] [--format=...] [--structure]` Generates a bundle  
 
 ### Routing
 
