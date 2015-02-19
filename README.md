@@ -4,6 +4,8 @@ Useful practical commands, code and things you will frequently need for working 
 
 ## Table of contents
 
+* [Symfony Installer](#symfony-installer)
+* [Composer](#composer)
 * [Console](#console)
   * [General](#general)
   * [Cache](#cache)
@@ -11,6 +13,52 @@ Useful practical commands, code and things you will frequently need for working 
   * [Routing](#routing)
   * [Doctrine](#doctrine)
 * [Twig](#twig)
+
+## Symfony Installer<a name="symfony-installer"></a>
+
+```bash
+# Install Symfony Installer
+curl -LsS http://symfony.com/installer > symfony.phar
+sudo mv symfony.phar /usr/local/bin/symfony
+chmod a+x /usr/local/bin/symfony
+```
+
+```bash
+# Create a new project
+symfony new my_project
+```
+
+```bash
+# Update the Symfony installer
+symfony self-update
+```
+
+```bash
+# List help
+symfony about
+```
+
+## Composer<a name="composer"></a>
+
+```bash
+# Create new project with Composer
+composer create-project symfony/framework-standard-edition ~2.6
+```
+
+```bash
+# Add package to project
+composer require vendor/library
+```
+
+```bash
+# Update all dependencies of current project
+composer update
+```
+
+```bash
+# Install dependencies for current project with versions defined in composer.lock
+composer install
+```
 
 ## Console<a name="console"></a>
 
@@ -208,6 +256,16 @@ php app/console doctrine:fixtures:load [--fixtures=...] [--append] [--em=...] [-
 ## Twig<a name="twig"></a>
 
 ```twig
-{# echo variable #}
+{# Echo variable with html escaping #}
 {{ content }}
+```
+
+```twig
+{# Echo raw variable and disable html escaping #}
+{{ content|raw }}
+```
+
+```twig
+{# Extend template #}
+{% extends '::base.html.twig' %}
 ```
