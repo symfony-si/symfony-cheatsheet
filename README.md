@@ -13,6 +13,7 @@ Useful practical commands, code and things you will frequently need for working 
   * [Routing](#routing)
   * [Doctrine](#doctrine)
 * [Twig](#twig)
+* [Controller](#controller)
 
 ## Symfony Installer<a name="symfony-installer"></a>
 
@@ -268,4 +269,15 @@ php app/console doctrine:fixtures:load [--fixtures=...] [--append] [--em=...] [-
 ```twig
 {# Extend template #}
 {% extends '::base.html.twig' %}
+```
+
+## Controller<a name="controller"></a>
+
+```php
+use Symfony\Component\HttpFoundation\Response;
+
+public function helloAction()
+{
+    return new Response('Hello world!');
+}
 ```
