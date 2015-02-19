@@ -10,6 +10,7 @@ Useful practical commands, code and things you will frequently need for working 
   * [Bundle](#bundle)
   * [Routing](#routing)
   * [Doctrine](#doctrine)
+* [Twig](#twig)
 
 ## Console<a name="console"></a>
 
@@ -202,4 +203,11 @@ php app/console doctrine:ensure-production-settings [--complete] [--em=...]
 ```bash
 # Load data fixtures to your database
 php app/console doctrine:fixtures:load [--fixtures=...] [--append] [--em=...] [--purge-with-truncate]
+```
+
+## Twig<a name="twig"></a>
+
+```twig
+{# echo variable #}
+{{ content }}
 ```
