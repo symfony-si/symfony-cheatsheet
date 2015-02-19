@@ -11,37 +11,68 @@ Useful practical commands, code and things you will frequently need for working 
   * [Routing](#routing)
   * [Doctrine](#doctrine)
 
-## Console
+## Console<a name="console"></a>
 
-### General
+### General<a name="general"></a>
 
-`$ php app/console` List available commands and show the Symfony version  
-`$ php app/console help [command]`  
-`$ php app/console container:debug [--show-private] [service_name]` Displays all configured public services  
-`$ php app/console assetic:dump [--watch] [--force] [--period=...] [write_to]` Dumps all assets to the filesystem  
-`$ php app/console config:dump-reference <bundle_or_extension_alias>` Dumps the default configuration for an extension/bundle  
-`$ php app/console swiftmailer:spool:send [--message-limit=...] [--time-limit=...] [--recover-timeout=...]`  
-`$ php app/console translation:update [--prefix=...] [--update-format=...] [--dump-messages] [--force]  <locale> <bundle>` Extract translation strings from templates of a given bundle. It can display them or merge the new ones into the translation files  
-`$ php app/console twig:lint <filename>` Lints a template and outputs to stdout the first encountered syntax error  
+```bash
+# List available commands and show the Symfony version
+$ php app/console
+```
 
-### Cache
+```bash
+# displays help for given command
+$ php app/console help [command]
+```
+
+```bash
+# Displays all configured public services
+$ php app/console container:debug [--show-private] [service_name]
+```
+
+```bash
+# Dumps all assets to the filesystem
+$ php app/console assetic:dump [--watch] [--force] [--period=...] [write_to]
+```
+
+```bash
+# Dumps the default configuration for an extension/bundle
+$ php app/console config:dump-reference <bundle_or_extension_alias>
+```
+
+```bash
+# Send messages from spool
+$ php app/console swiftmailer:spool:send [--message-limit=...] [--time-limit=...] [--recover-timeout=...]
+```
+
+```bash
+# Extract translation strings from templates of a given bundle. It can display them or merge the new ones into the translation files
+$ php app/console translation:update [--prefix=...] [--update-format=...] [--dump-messages] [--force]  <locale> <bundle>
+```
+
+```bash
+# Lints a template and outputs to stdout the first encountered syntax error
+$ php app/console twig:lint <filename>`
+```
+
+### Cache<a name="cache"></a>
 
 `$ php app/console cache:clear [--no-warmup] [--no-optional-warmers]` Clear the cached information  
 `$ php app/console cache:warmup  [--no-optional-warmers]` Warms up an empty cache  
 
-### Bundle
+### Bundle<a name="bundle"></a>
 
 `$ php app/console assets:install <target_dir> [--symlink] [--relative]` Installs bundles web assets under a public web directory  
 `$ php app/console generate:bundle [--namespace=...] [--dir=...] [--bundle-name=...] [--format=...] [--structure]` Generates a bundle  
 
-### Routing
+### Routing<a name="routing"></a>
 
 `$ php app/console router:debug [route_name]` Displays current routes for an application  
 `$ php app/console router:dump-apache [--base-uri=...] [script_name]` Dumps all routes as Apache rewrite rules  
 `$ php app/console router:match <path_info>` Debug routes by simulating a path info match  
 `$ php app/console fos:js-routing:debug <name>` Displays current exposed routes for an application  
 
-### Doctrine
+### Doctrine<a name="doctrine"></a>
 
 `$ php app/console doctrine:cache:clear-metadata [--em=...] [--flush]` Clears all metadata cache for an entity manager  
 `$ php app/console doctrine:cache:clear-query [--em=...] [--flush]` Clears all query cache for an entity manager  
@@ -63,8 +94,3 @@ Useful practical commands, code and things you will frequently need for working 
 `$ php app/console doctrine:schema:validate [--em=...]` Validates the Doctrine mapping files  
 `$ php app/console doctrine:ensure-production-settings [--complete] [--em=...]` Ensures that Doctrine is properly configured for a production environment  
 `$ php app/console doctrine:fixtures:load [--fixtures=...] [--append] [--em=...] [--purge-with-truncate]` Load data fixtures to your database  
-
-
-## License
-
-This content is published under the [Creative Commons Attribution 4.0 International License](LICENSE).
